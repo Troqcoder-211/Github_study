@@ -116,6 +116,28 @@ public class JTableExample {
 
             }
         });
+        btnDel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                {
+                    int i = table.getSelectedRow();
+
+                    if (i >= 0) {
+                        modelTablePoint.removeRow(i);
+                    } else {
+                        JOptionPane.showMessageDialog(f, "Chọn mà sinh viên muốn xóa");
+                    }
+                }
+            }
+        });
+        btnExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                {
+                    System.exit(0);
+                }
+            }
+        });
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(500, 800);
         f.setLocation(800, 100);
