@@ -8,32 +8,42 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-class MineQuizz extends JFrame {
+class MineQuizz extends JFrame implements ActionListener {
+    JFrame f = new JFrame();
+
     String content = "MINE_QUIZZ";
     String copyRight = "copyRight @ fourT SGU 2024";
     JPanel contentPanelRight = new JPanel();
     ImageIcon imagePrimarySoftWare = new ImageIcon("Image/java.jpg");
     static String contentWelcomePanelRight = "Welcome to MINE_QUIZZ \n";
     static String contentWelcomePanelRightCode = "Enter your code \n";
+    static JButton buttonRight = new JButton("Submit");
+    static JTextField textFieldright = new JTextField(20);
+    static Scanner scanner = new Scanner(System.in);
 
     JPanel contentPanelLeft = new JPanel() {
         @Override
         protected void paintComponent(Graphics grphcs) {
             super.paintComponent(grphcs);
             Graphics2D g2d = (Graphics2D) grphcs;
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_ON);
-            GradientPaint gp = new GradientPaint(0, 0,
-                    new Color(97, 97, 97), 0, getHeight(),
-                    new Color(189, 189, 189));
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            GradientPaint gp = new GradientPaint(0, 0, new Color(97, 97, 97), 0, getHeight(), new Color(189, 189, 189));
             g2d.setPaint(gp);
             g2d.fillRect(0, 0, getWidth(), getHeight());
 
@@ -73,13 +83,13 @@ class MineQuizz extends JFrame {
     }
 
     static void setTextFieldRight(JPanel contentJPanelRight, int size) {
-        JTextField textFieldright = new JTextField(size);
         textFieldright.setForeground(new Color(92, 112, 176));
         textFieldright.setFont(new Font("Arial", Font.BOLD, size));
         textFieldright.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelContentRight = new JLabel(contentWelcomePanelRightCode);
         labelContentRight.setForeground(new Color(92, 112, 176));
+        labelContentRight.setBackground(new Color(0x2dce98));
         labelContentRight.setHorizontalAlignment(JLabel.CENTER);
         labelContentRight.setVerticalAlignment(JLabel.CENTER);
         labelContentRight.setFont(new Font("Arial", Font.BOLD, 15));
@@ -92,15 +102,15 @@ class MineQuizz extends JFrame {
         contentJPanelRight.add(contentJPanelRightInput);
     }
 
-    static void setButtonRight(JPanel contentJPanelRight, int size) {
-        JButton buttonRight = new JButton("Submit");
+    static void setButtonRight(JPanel contentJPanelRight, JButton button, int size) {
         buttonRight.setForeground(new Color(92, 112, 176));
+        buttonRight.setBackground(new Color(0x2dce98));
         buttonRight.setFont(new Font("Arial", Font.BOLD, size));
+
         contentJPanelRight.add(buttonRight);
     }
 
     MineQuizz() {
-        JFrame f = new JFrame();
         contentPanelRight.setBackground(Color.WHITE);
 
         setContentImagePanelLeft(contentPanelLeft, imagePrimarySoftWare, 250, 100);
@@ -110,8 +120,10 @@ class MineQuizz extends JFrame {
 
         setContentPanelRight(contentPanelRight, contentWelcomePanelRight, 20, 500, 100);
         setTextFieldRight(contentPanelRight, 20);
-        setButtonRight(contentPanelRight, 20);
+        setButtonRight(contentPanelRight, buttonRight, 20);
         contentPanelRight.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 100));
+
+        buttonRight.addActionListener(this);
 
         f.add(contentPanelLeft);
         f.add(contentPanelRight);
@@ -121,10 +133,40 @@ class MineQuizz extends JFrame {
         f.setVisible(true);
         f.setResizable(false);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (checkCode(scanner)) {
+            f.dispose();
+            new JTableExample();
+        } else {
+            JOptionPane.showMessageDialog(f, "Wrong Code");
+        }
+        // System.out.println(textFieldright.getText());
+    }
+
+    static boolean checkCode(Scanner scanner) {
+        try {
+            scanner = new Scanner(new File("code.txt"));
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                if (textFieldright.getText().equals(line)) {
+                    return true;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "File not found");
+            return false;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error");
+            return false;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
         new MineQuizz();
-        ;
     }
 }
