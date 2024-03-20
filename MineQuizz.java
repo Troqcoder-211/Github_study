@@ -20,8 +20,9 @@ class MineQuizz extends JFrame {
     String content = "MINE_QUIZZ";
     String copyRight = "copyRight @ fourT SGU 2024";
     JPanel contentPanelRight = new JPanel();
-    ImageIcon imagePrimarySoftWare = new ImageIcon("Image/ca.jpg");
+    ImageIcon imagePrimarySoftWare = new ImageIcon("Image/java.jpg");
     static String contentWelcomePanelRight = "Welcome to MINE_QUIZZ \n";
+    static String contentWelcomePanelRightCode = "Enter your code \n";
 
     JPanel contentPanelLeft = new JPanel() {
         @Override
@@ -76,7 +77,19 @@ class MineQuizz extends JFrame {
         textFieldright.setForeground(new Color(92, 112, 176));
         textFieldright.setFont(new Font("Arial", Font.BOLD, size));
         textFieldright.setHorizontalAlignment(JTextField.CENTER);
-        contentJPanelRight.add(textFieldright);
+
+        JLabel labelContentRight = new JLabel(contentWelcomePanelRightCode);
+        labelContentRight.setForeground(new Color(92, 112, 176));
+        labelContentRight.setHorizontalAlignment(JLabel.CENTER);
+        labelContentRight.setVerticalAlignment(JLabel.CENTER);
+        labelContentRight.setFont(new Font("Arial", Font.BOLD, 15));
+
+        JPanel contentJPanelRightInput = new JPanel();
+        contentJPanelRightInput.setLayout(new GridLayout(2, 1));
+        contentJPanelRightInput.add(labelContentRight);
+        contentJPanelRightInput.add(textFieldright);
+
+        contentJPanelRight.add(contentJPanelRightInput);
     }
 
     static void setButtonRight(JPanel contentJPanelRight, int size) {
@@ -93,11 +106,12 @@ class MineQuizz extends JFrame {
         setContentImagePanelLeft(contentPanelLeft, imagePrimarySoftWare, 250, 100);
         setContentTitlePanelLeft(contentPanelLeft, content, 40, 350, 100);
         setContentTitlePanelLeft(contentPanelLeft, copyRight, 10, 250, 100);
-        contentPanelLeft.setLayout(new FlowLayout(100, 125, 100));
+        contentPanelLeft.setLayout(new FlowLayout(FlowLayout.CENTER, 125, 100));
 
         setContentPanelRight(contentPanelRight, contentWelcomePanelRight, 20, 500, 100);
         setTextFieldRight(contentPanelRight, 20);
         setButtonRight(contentPanelRight, 20);
+        contentPanelRight.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 100));
 
         f.add(contentPanelLeft);
         f.add(contentPanelRight);
@@ -111,6 +125,6 @@ class MineQuizz extends JFrame {
 
     public static void main(String[] args) {
         new MineQuizz();
-        // System.out.println(contentWelcomePanelRight);
+        ;
     }
 }

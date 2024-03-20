@@ -23,7 +23,7 @@ public class JMenuBar {
         submenu.add(i5);
         menu.add(submenu);
 
-        f.setJMenuBar(menu);
+        // f.setJMenuBar(menu);
 
         f.setSize(400, 400);
         f.setLayout(null);
