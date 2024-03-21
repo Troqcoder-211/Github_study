@@ -14,6 +14,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.swing.ImageIcon;
@@ -103,8 +105,8 @@ class MineQuizz extends JFrame implements ActionListener {
     }
 
     static void setButtonRight(JPanel contentJPanelRight, JButton button, int size) {
-        buttonRight.setForeground(new Color(92, 112, 176));
-        buttonRight.setBackground(new Color(0x2dce98));
+        buttonRight.setForeground(Color.WHITE);
+        buttonRight.setBackground(new Color(149, 165, 166));
         buttonRight.setFont(new Font("Arial", Font.BOLD, size));
 
         contentJPanelRight.add(buttonRight);
@@ -134,6 +136,8 @@ class MineQuizz extends JFrame implements ActionListener {
         f.setResizable(false);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        FileWritterCode(new File("code.txt"), 10);
+        JOptionPane.showMessageDialog(f, "Your code is " + CreateStringRandom.randomAlphaNumeric(8));
     }
 
     @Override
@@ -164,6 +168,19 @@ class MineQuizz extends JFrame implements ActionListener {
             return false;
         }
         return false;
+    }
+
+    static void FileWritterCode(File file, int numberCode) {
+
+        for (int i = 0; i < numberCode; i++) {
+            try {
+                FileWriter writer = new FileWriter(file, true);
+                writer.write(CreateStringRandom.randomAlphaNumeric(8) + "\n");
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void main(String[] args) {

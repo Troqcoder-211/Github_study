@@ -6,18 +6,35 @@ import javax.swing.*;
 
 public class TestClass {
     static Scanner scanner = new Scanner(System.in);
+    static Random generator = new Random();
 
     public static void main(String[] args) {
-        JFrame Jframe = new JFrame(); // creates a frame
-        Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Jframe.setSize(500, 200);
-        Jframe.setLocation(750, 250);
+        // JFrame Jframe = new JFrame(); // creates a frame
+        // Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Jframe.setSize(500, 200);
+        // Jframe.setLocation(750, 250);
         // int choice = JoptionPaneLearn(Jframe);
         // choiceEx(choice, Jframe);
-        Jframe.setVisible(true);
-        FlowLayout(Jframe);
+        // Jframe.setVisible(true);
+        // FlowLayout(Jframe);
         // GridLayoutLearn(Jframe);
         // BorderLayoutLearn(Jframe);
+        RandomString(generator);
+
+    }
+
+    static void RandomString(Random generator) {
+
+        System.out.println("Random Integer: " + generator.nextInt());
+        System.out.println("Random Long: " + generator.nextLong());
+        System.out.println("Random Float: " + generator.nextFloat());
+        System.out.println("Random Double: " + generator.nextDouble());
+        System.out.println("Random Boolean: " + generator.nextBoolean());
+
+        byte[] bytes = "gpcoder.com".getBytes();
+        System.out.println("Before Random Bytes : " + new String(bytes));
+        generator.nextBytes(bytes);
+        System.out.println("After Random Bytes : " + new String(bytes));
     }
 
     public static void HelloWorld(JFrame Jframe) {
