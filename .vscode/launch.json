@@ -1,0 +1,161 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BorderTest",
+            "request": "launch",
+            "mainClass": "BorderTest",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "CheckBox",
+            "request": "launch",
+            "mainClass": "CheckBox",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "ComboBox",
+            "request": "launch",
+            "mainClass": "ComboBox",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "CreateStringRandom",
+            "request": "launch",
+            "mainClass": "CreateStringRandom",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "DemoJTablePane",
+            "request": "launch",
+            "mainClass": "DemoJTablePane",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "Ex3",
+            "request": "launch",
+            "mainClass": "Ex3",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "Ex4",
+            "request": "launch",
+            "mainClass": "Ex4",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "GuiJavaSwing",
+            "request": "launch",
+            "mainClass": "GuiJavaSwing",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "JBDCexample",
+            "request": "launch",
+            "mainClass": "JBDCexample",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "JMenuBar",
+            "request": "launch",
+            "mainClass": "JMenuBar",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "JSliderEx",
+            "request": "launch",
+            "mainClass": "JSliderEx",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "JTableExample",
+            "request": "launch",
+            "mainClass": "JTableExample",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "MineQuizz",
+            "request": "launch",
+            "mainClass": "MineQuizz",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "MineQuizzTest",
+            "request": "launch",
+            "mainClass": "MineQuizzTest",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "MyWindow",
+            "request": "launch",
+            "mainClass": "MyWindow",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "ObjectOriendtedProgramming",
+            "request": "launch",
+            "mainClass": "ObjectOriendtedProgramming",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "Panel",
+            "request": "launch",
+            "mainClass": "Panel",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "Progressbar",
+            "request": "launch",
+            "mainClass": "Progressbar",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "Radio",
+            "request": "launch",
+            "mainClass": "Radio",
+            "projectName": "Java_fullcourse_56a89c5a"
+        },
+        {
+            "type": "java",
+            "name": "TestClass",
+            "request": "launch",
+            "mainClass": "TestClass",
+            "projectName": "Java_fullcourse_56a89c5a"
+        }
+    ]
+}

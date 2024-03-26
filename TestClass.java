@@ -9,17 +9,17 @@ public class TestClass {
     static Random generator = new Random();
 
     public static void main(String[] args) {
-        // JFrame Jframe = new JFrame(); // creates a frame
-        // Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // Jframe.setSize(500, 200);
-        // Jframe.setLocation(750, 250);
+        JFrame Jframe = new JFrame(); // creates a frame
+        Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Jframe.setSize(500, 200);
+        Jframe.setLocation(750, 250);
         // int choice = JoptionPaneLearn(Jframe);
         // choiceEx(choice, Jframe);
-        // Jframe.setVisible(true);
-        // FlowLayout(Jframe);
+        FlowLayout(Jframe);
+        Jframe.setVisible(true);
         // GridLayoutLearn(Jframe);
         // BorderLayoutLearn(Jframe);
-        RandomString(generator);
+        // RandomString(generator);
 
     }
 

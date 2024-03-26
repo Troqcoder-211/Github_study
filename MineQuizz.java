@@ -138,6 +138,7 @@ class MineQuizz extends JFrame implements ActionListener {
 
         FileWritterCode(new File("code.txt"), 10);
         JOptionPane.showMessageDialog(f, "Your code is " + CreateStringRandom.randomAlphaNumeric(8));
+
     }
 
     @Override
